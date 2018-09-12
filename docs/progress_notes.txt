@@ -15,4 +15,38 @@ scp /D/SN877_0416_CHelliwell_CSIRO_Brapa_gDNA/*.fastq.gz  jam19e@pearcey-i2.hpc.
 
 Note data is stored in D drive in the external hard drive
 
-README file should be stored at the top level within a git directory (e.g. 2018_CanolaData) and not in sub directories. 
+README file should be stored at the top level within a git directory (e.g. 2018_CanolaData) and not in sub directories.
+
+To run fastqc on a single file:
+
+	module load fastqc
+	fastqc
+
+Then 
+
+fastqc /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/data/Pool1_S1_R1_001.fastq.gz > /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/processed/fastqc/Pool1_S1_R1_001_fastqc.html
+
+
+The bit after > redirects the output to a specific location. If this is not specified, the output file will be saved in same location as input files, e.g. /data 
+
+To save this file as a bash script:
+
+	vim fastqc_single_file.sh
+
+And add the command lines as below:
+
+#!/bin/bash
+module load fastqc
+fastqc
+fastqc /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/data/Pool1_S1_R1_001.fastq.gz > /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/processed/fastqc/Pool1_S1_R1_001_fastqc.html
+
+
+To save in vim use exit, :w to save, :q to quit and :wq to save and quit.
+
+Now to run this bash script:
+
+bash scripts/fastqc_single_file.sh    #remember your location in the directory)
+
+To make this script executable use:
+chmod +x script.sh
+ 

@@ -24,10 +24,10 @@ To run fastqc on a single file:
 
 Then 
 
-fastqc /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/data/Pool1_S1_R1_001.fastq.gz > /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/processed/fastqc/Pool1_S1_R1_001_fastqc.html
+fastqc -o OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/processed/fastqc/ /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/data/Pool1_S1_R1_001.fastq.gz
 
 
-The bit after > redirects the output to a specific location. If this is not specified, the output file will be saved in same location as input files, e.g. /data 
+The -o command redirects the output to a specific location. If this is not specified, the output file will be saved in same location as input files, e.g. /data 
 
 To save this file as a bash script:
 
@@ -37,8 +37,8 @@ And add the command lines as below:
 
 #!/bin/bash
 module load fastqc
-fastqc
-fastqc /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/data/Pool1_S1_R1_001.fastq.gz > /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/processed/fastqc/Pool1_S1_R1_001_fastqc.html
+
+fastqc -o /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/processed/fastqc/ /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/data/Pool1_S1_R1_001.fastq.gz 
 
 
 To save in vim use exit, :w to save, :q to quit and :wq to save and quit.
@@ -48,5 +48,5 @@ Now to run this bash script:
 bash scripts/fastqc_single_file.sh    #remember your location in the directory)
 
 To make this script executable use:
-chmod +x script.sh
+chmod +x script.sih
  

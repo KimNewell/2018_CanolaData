@@ -6,10 +6,8 @@
 
 module load fastqc
 
-fastqc
 
 # Now use this command to run fasqc on single file by specifyimg the file path to Bowen where this file is stored
 
-fastqc /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/data/Pool1_S1_R1_001.fastq.gz > /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/processed/fastqc/Pool1_S1_R1_001_fastqc.html 
-
-# Adding script after > redirects the oupt fiel to a specific directory
+fastqc -o /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/processed/fastqc/ /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/data/Pool1_S1_R1_001.fastq.gz  
+# Adding -o sets the target folder

@@ -1,1 +1,18 @@
-Here we will write a commentry of our progress
+Here we will write a commentry of our progress. 
+
+Created a folder 'data' in Bowen: /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/data
+
+To copy data files from the hard drive we used this command: 
+scp /D/SN877_0416_CHelliwell_CSIRO_Brapa_gDNA/*.fastq.gz  jam19e@pearcey-i2.hpc.csiro.au:/OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/data
+
+
+ To copy files from gard drive to Bowen, it is important to understand the file location in hard drive relative to current directory. Use command 'exit' to get out of Pearcey if you are there and then use use command 'cd /' to go to top level of your local system.
+
+
+
+To copy data files from the hard drive we used this command:
+scp /D/SN877_0416_CHelliwell_CSIRO_Brapa_gDNA/*.fastq.gz  jam19e@pearcey-i2.hpc.csiro.au:/OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/data
+
+Note data is stored in D drive in the external hard drive
+
+README file should be stored at the top level within a git directory (e.g. 2018_CanolaData) and not in sub directories. 

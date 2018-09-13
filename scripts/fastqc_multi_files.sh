@@ -1,10 +1,8 @@
-#!/usr/bin/env bash
+!/usr/bin/env bash
 #SBATCH --job-name=fastqc
-#SBATCH --time=24:00:00
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=20
-#SBATCH --exclusive
-#SBATCH --mem=120GB
+#SBATCH --time=01:00:00
+#SBATCH --ntasks=1
+#SBATCH --mem=2GB
 
 
 # To run fastqc on a single file as a batch job

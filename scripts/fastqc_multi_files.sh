@@ -20,7 +20,7 @@ module load fastqc
 # Adding -o sets the target folder
 
 
-for f in /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/data/*.fastq.gz; do
-  fastqc ${f} 
- -o /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/processed/fastqc/
+for f in /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/data/*.gz; do
+  fastqc -o /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/processed/fastqc/ ${f}; 
+
 done

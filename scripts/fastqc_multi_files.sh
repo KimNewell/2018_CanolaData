@@ -1,4 +1,5 @@
-!/usr/bin/env bash
+#!/usr/bin/env bash
+
 #SBATCH --job-name=fastqc
 #SBATCH --time=01:00:00
 #SBATCH --ntasks=1
@@ -14,6 +15,12 @@ module load fastqc
 
 # Now use this command to run fasqc on single file by specifyimg the file path to Bowen where this file is stored
 
-fastqc -o /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/processed/fastqc/ /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/data/Pool2_S2_R1_001.fastq.gz
+# fastqc -o /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/processed/fastqc/ /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/data/Pool2_S2_R1_001.fastq.gz
   
 # Adding -o sets the target folder
+
+
+for f in /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/data/*.fastq.gz; do
+  fastqc ${f} 
+ -o /OSM/CBR/AF_DATASCHOOL/input/Hiz_Kim/processed/fastqc/
+done
